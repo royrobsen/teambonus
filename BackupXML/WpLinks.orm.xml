@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\WpLinks" table="wp_links">
+    <indexes>
+      <index name="link_visible" columns="link_visible"/>
+    </indexes>
+    <id name="linkId" type="bigint" column="link_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="linkUrl" type="string" column="link_url" length="255" nullable="false"/>
+    <field name="linkName" type="string" column="link_name" length="255" nullable="false"/>
+    <field name="linkImage" type="string" column="link_image" length="255" nullable="false"/>
+    <field name="linkTarget" type="string" column="link_target" length="25" nullable="false"/>
+    <field name="linkDescription" type="string" column="link_description" length="255" nullable="false"/>
+    <field name="linkVisible" type="string" column="link_visible" length="20" nullable="false"/>
+    <field name="linkOwner" type="bigint" column="link_owner" nullable="false"/>
+    <field name="linkRating" type="integer" column="link_rating" nullable="false"/>
+    <field name="linkUpdated" type="datetime" column="link_updated" nullable="false"/>
+    <field name="linkRel" type="string" column="link_rel" length="255" nullable="false"/>
+    <field name="linkNotes" type="text" column="link_notes" nullable="false"/>
+    <field name="linkRss" type="string" column="link_rss" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-xs-12 col-md-8">
+            <div class="box-blue">
+                <h1>Passwort vergessen?</h1>
+                {% for flashMessage in app.session.flashbag.get('warning') %}
+                    <div class="alert alert-danger">
+                    <strong>Achtung!</strong> Da hat was nicht geklappt :-(
+                    {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success">
+                    {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                <div class="form-group">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    <h5>E-Mailadresse</h5>
+                    {{ form_widget(form.email, { 'attr': {'class': 'form-control'}} ) }}<br />
+                    {{ form_widget(form.save, { 'attr': {'class': 'btn btn-primary'}} ) }}
+                    {{ form_end(form) }}    
+                </div>
+            </div>       
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <div class="box-blue">
+                Du bekommst von uns eine E-Mail mit einem Link. Mit diesem Link kannst du dir ein neues Passwort nach deinen Vorstellungen erstellen.            
+            </div>       
+        </div>
+    </div>
+{% endblock %}  

@@ -1,0 +1,56 @@
+team_admin_homepage:
+    path:     /admin
+    defaults: { _controller: TeamAdminBundle:Admin:index }
+
+team_admin_clubs:
+    path:     /admin/clubs/all
+    defaults: { _controller: TeamAdminBundle:Clubs:all }
+
+team_admin_jsonallclubs:
+    path:     /admin/clubs/jsonallclubs
+    defaults: { _controller: TeamAdminBundle:Clubs:jsonallclubs }
+    
+team_admin_club:
+    path:     /admin/clubs/{id}
+    defaults: { _controller: TeamAdminBundle:Clubs:club }
+    
+team_admin_team:
+    path:     /admin/teams/{id}
+    defaults: { _controller: TeamAdminBundle:Teams:teams }
+    
+team_admin_shops:
+    path:     /admin/shops/all
+    defaults: { _controller: TeamAdminBundle:Shops:all }
+    
+team_admin_jsonallshops:
+    path:     /admin/shops/jsonallshops
+    defaults: { _controller: TeamAdminBundle:Shops:jsonallshops }
+    
+team_admin_shop:
+    path:     /admin/shops/{id}
+    defaults: { _controller: TeamAdminBundle:Shops:shop }
+    
+team_admin_payouts:
+    path:     /admin/payouts/all
+    defaults: { _controller: TeamAdminBundle:Payouts:all }
+    
+team_admin_jsonallpayouts:
+    path:     /admin/payouts/jsonallpayouts
+    defaults: { _controller: TeamAdminBundle:Payouts:jsonallpayouts }
+    
+team_admin_payout:
+    path:     /admin/payouts/{id}
+    defaults: { _controller: TeamAdminBundle:Payouts:payouts }
+    
+team_admin_sales:
+    path:     /admin/sales/all
+    defaults: { _controller: TeamAdminBundle:Sales:all }
+    
+team_admin_jsonallsales:
+    path:     /admin/sales/jsonallsales
+    defaults: { _controller: TeamAdminBundle:Sales:jsonallsales }
+
+team_admin_sale:
+    path:     /admin/sales/{id}
+    defaults: { _controller: TeamAdminBundle:Sales:sale }
+    

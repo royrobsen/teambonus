@@ -1,0 +1,11 @@
+team_admin:
+    resource: "@TeamAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+team_index:
+    resource: "@TeamIndexBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

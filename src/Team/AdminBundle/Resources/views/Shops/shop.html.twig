@@ -1,0 +1,45 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+            <h1 class="page-header">Shop <small> {{shop.shopName}} </small></h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> Bearbeiten </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">                            
+                                        {{ form_start(form) }}
+                                        {{ form_errors(form) }}	
+                                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                                <div class="alert alert-info">
+                                                    {{ flashMessage }}
+                                                </div>                    
+                                            {% endfor %}
+                                            <h4>Shopname</h4>
+                                            {{ form_widget(form.shopName, { 'attr': {'class': 'form-control'}} ) }}
+                                            <h4>Shoplogo</h4>
+                                            {{ form_widget(form.picRef, { 'attr': {'class': 'form-control'}} ) }}
+                                            <h4>Shoplink</h4>
+                                            {{ form_widget(form.linkRef, { 'attr': {'class': 'form-control'}} ) }}   
+                                            <h4>Teambonus-Provision</h4>
+                                            {{ form_widget(form.provisionTb, { 'attr': {'class': 'form-control'}} ) }}    
+                                            <h4>Mannschaften-Provision</h4>
+                                            {{ form_widget(form.provisionTeams, { 'attr': {'class': 'form-control'}} ) }}   
+                                            <br />
+                                            {{ form_widget(form.save, { 'attr': {'class': 'btn btn-default'}} ) }}
+                                        {{ form_end(form) }}
+                                    </div>
+                                </div>
+                            </div>
+                    </div>            
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>
+
+{% endblock %}

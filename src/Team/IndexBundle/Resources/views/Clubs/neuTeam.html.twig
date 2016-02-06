@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+            <!-- Section Title -->           
+            <section class="section-title img-news">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>Neues Team anmelden</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>/</li>
+                            <li><a href="/vereine">Vereine</a></li>  
+                            <li>/</li>
+                            <li>Neues Team erstellen</li>
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container padding-top">
+                    <div class="row">
+                        
+                        <!-- content Column Left -->
+                        <div class="col-md-12">                     
+                            <!-- Recent Post -->
+                            <div class="panel-box">
+                            
+                                <div class="titles">
+                                    <h4>Neues Team anmelden</h4>
+                                </div>
+                                <div class="post-item">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                        {% for flashMessage in app.session.flashbag.get('notice') %}
+                                            <div class="alert alert-success">
+                                                {{ flashMessage }}
+                                            </div>
+                                        {% endfor %}
+                                            <div class="alert alert-info">
+                                                <p id="firstInfo">Du hast den Verein <b>{{club.clubName}}</b> ausgewählt!</p>
+                                                <p id="secondInfo" style="display: none;">Wir brauchen einen verbindlichen Ansprechpartner aus dem Umfeld deines Teams. Dieser Ansprechpartner ist verantwortlich für eure Teambonus-Kasse und kann Auszahlungen beantragen. Daher sollte dies eine besonders vertrauensvolle Person sein,<b> z.B. euer Kassenwart.</b></p>
+                                            </div>
+                                        </div>        
+                                        <div class="col-md-6 col-xs-12">
+                                            {{form_start(form)}}
+                                            {{ form_errors(form) }}
+                                            <h4>Teamname</h4>
+                                            {{ form_widget(form.teamName, { 'attr': {'class': 'form-control'} }) }}<br /> 
+                                            <h4>Über das Team</h4>
+                                            {{ form_widget(form.aboutTeam, { 'attr': {'class': 'form-control', 'style' : 'max-height: 120px; min-width:100%; resize: none; min-height: 120px;'} }) }}<br /> 
+                                            <h4>Website</h4>
+                                            {{ form_widget(form.website, { 'attr': {'class': 'form-control'} }) }}<br /> 
+                                        </div>
+                                        <div class="col-md-6 col-xs-12">
+                                            <h4>Vorname</h4>
+                                            {{ form_widget(form.apFirst, { 'attr': {'class': 'form-control'} }) }}<br /> 
+                                            <h4>Nachname</h4>
+                                            {{ form_widget(form.apLast, { 'attr': {'class': 'form-control'} }) }}<br /> 
+                                            <h4>E-Mail</h4>
+                                            {{ form_row(form.apMail, { 'attr': {'class': 'form-control'} }) }}<br /> 
+                                            <h4>Telefon</h4>
+                                            {{ form_widget(form.apPhone, { 'attr': {'class': 'form-control'} }) }}<br /> 
+                                            <br />
+                                            <input type="checkbox" required="required"> Ich stimme den <a href="/datenschutz">Datenschutzbestimmungen</a> zu!
+                                            <br /><br />       
+                                            {{ form_widget(form.save, {'label' : 'Eintragen', 'attr': {'class': 'btn btn-info'} }) }}
+                                            {{ form_end ( form ) }}
+                                        </div>
+                                    </div>    
+                                </div>    
+                            </div>
+                        </div>            
+                         <!-- End content Left -->
+                    </div>                     
+                </div>  
+                <!-- End Content Central -->
+
+{% endblock %}

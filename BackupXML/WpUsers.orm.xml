@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\WpUsers" table="wp_users">
+    <indexes>
+      <index name="user_login_key" columns="user_login"/>
+      <index name="user_nicename" columns="user_nicename"/>
+    </indexes>
+    <id name="id" type="bigint" column="ID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userLogin" type="string" column="user_login" length="60" nullable="false"/>
+    <field name="userPass" type="string" column="user_pass" length="64" nullable="false"/>
+    <field name="userNicename" type="string" column="user_nicename" length="50" nullable="false"/>
+    <field name="userEmail" type="string" column="user_email" length="100" nullable="false"/>
+    <field name="userUrl" type="string" column="user_url" length="100" nullable="false"/>
+    <field name="userRegistered" type="datetime" column="user_registered" nullable="false"/>
+    <field name="userActivationKey" type="string" column="user_activation_key" length="60" nullable="false"/>
+    <field name="userStatus" type="integer" column="user_status" nullable="false"/>
+    <field name="displayName" type="string" column="display_name" length="250" nullable="false"/>
+  </entity>
+</doctrine-mapping>

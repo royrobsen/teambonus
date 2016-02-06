@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\WpOptions" table="wp_options">
+    <unique-constraints>
+      <unique-constraint name="option_name" columns="option_name"/>
+    </unique-constraints>
+    <id name="optionId" type="bigint" column="option_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="optionName" type="string" column="option_name" length="64" nullable="false"/>
+    <field name="optionValue" type="text" column="option_value" nullable="false"/>
+    <field name="autoload" type="string" column="autoload" length="20" nullable="false"/>
+  </entity>
+</doctrine-mapping>

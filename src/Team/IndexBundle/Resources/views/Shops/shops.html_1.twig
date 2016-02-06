@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block javascript %}     
+    <script src=" {{ asset('bundles/teamindex/js/controller/shopsController.js') }} "></script>
+ {% endblock %}
+{% block indexsearch %} {% endblock %}
+{% block content %}
+    <div class="container" ng-controller="pageCtrl" ng-init="showData()">
+        <div class="row">
+            <div class="col-md-3">
+                <h2 style="margin: 0;">Shops suchen</h2>
+            </div>
+            <div class="col-md-9">
+                <form novalidate class="form-horizontal" role="form">
+                    <div class="input-group">
+                    <input type="text" class="form-control searchinput ng-pristine ng-untouched ng-valid typeahead" type="text" ng-model="q.shopName" id="search" ng-change="load(); filter(); change();">
+                    <span class="input-group-btn">
+                        <button ng-click="saveData()" type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                    </div>
+                </form>
+            </div>   
+        </div> 
+        <hr />
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <div class="alert alert-info">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        <hr >
+            <div class="alert alert-info">
+                Dein Lieblingsshop ist nicht dabei?!
+                Melde ihn uns einfach und wir schauen, ob wir das ändern können! <u><a href="/neuer-shop">Jetzt eintragen!</a></u>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img id="mySpinner" src="/images/loading.gif" width="200px" class="img-responsive center-block" ng-show="loading" />
+                <div class="col-xs-6 col-sm-4 col-md-2" ng-repeat="datalist in data | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize" ng-class-odd="odd" ng-class-even="even">
+                    <div class="thumbnail">
+                        <div class="responsive-imgholder">
+                            <img src="[[datalist.picRef]]" width="120px" height="50px"/>
+                        </div>
+                        <div class="caption">
+                            <h4><a href="http://[[datalist.linkRef]]">[[datalist.shopName]]</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-info" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                    Zurück
+                </button>
+                <button class="btn btn-info disabled" >[[currentPage+1]]/[[numberOfPages()]]</button>
+                <button class="btn btn-info" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                    Weiter
+                </button>
+            </div>  
+        </div>
+    </div>
+
+
+{% endblock %}

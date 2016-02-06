@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block meta %}
+
+{% endblock %}
+{% block indexsearch %} {% endblock %}
+{% block content %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success">
+                    {{ flashMessage }}
+                </div>                    
+                {% endfor %}
+                <h1>Neuer Shop</h1>
+                {{form_start(form)}}
+                {{ form_row ( form.name ) }}<br />
+                {{ form_row ( form.email ) }}<br />
+                {{ form_row ( form.shop ) }}<br />
+                {{ form_row ( form.website ) }}<br />
+                {{ form_row ( form.message, {'attr': {'style': 'resize: none; height: 200px;'} }) }}<br />
+                {{ form_row ( form.save ) }}
+                {{ form_end ( form ) }}
+            </div>
+        </div> 
+              </div>
+{% endblock %}

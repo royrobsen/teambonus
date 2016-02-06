@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+            <!-- Section Title -->           
+            <section class="section-title img-news">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>Neues Team anmelden</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>/</li>
+                            <li><a href="/vereine">Vereine</a></li>  
+                            <li>/</li>
+                            <li>Neuen Verein anmelden</li>
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container padding-top">
+                    <div class="row">
+                        
+                        <!-- content Column Left -->
+                        <div class="col-md-12">                     
+                            <!-- Recent Post -->
+                            <div class="panel-box">
+                            
+                                <div class="titles">
+                                    <h4>Neuen Verein anmelden</h4>
+                                </div>
+                                <div class="post-item">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <div class="col-md-12">
+                                                {% for flashMessage in app.session.flashbag.get('notice') %}
+                                                <div class="alert alert-success">
+                                                    {{ flashMessage }}
+                                                </div>
+                                                {% endfor %}
+                                                <div class="alert alert-info">
+                                                   Trage hier den Namen des Vereins ein, den du hinzufügen möchtest. Wir prüfen deine Eingaben und geben den Verein kurzfristig frei.
+                                                </div>
+                                            </div>    
+                                            <div class="col-md-12">
+                                                <div class="col-xs-6 col-sm-4 col-md-2">
+                                                {{form_start(form)}}
+                                                <h4>Vereinsname:</h4>
+                                                {{ form_widget(form.clubName, {'attr': {'class': 'form-control'} }) }}<br />
+                                                {{ form_widget(form.attachment, {'attr': {'style': 'display: none;'} }) }}
+                                                {{ form_widget(form.save, {'label' : 'Eintragen', 'attr': {'class': 'btn btn-info'} }) }}
+                                                {{ form_end ( form ) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>            
+                         <!-- End content Left -->
+                    </div>                     
+                </div>  
+                <!-- End Content Central -->
+
+{% endblock %}

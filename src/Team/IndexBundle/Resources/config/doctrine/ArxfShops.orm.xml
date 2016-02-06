@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\ArxfShops" table="arxf_shops">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="shopName" type="text" column="shop_name" nullable="false"/>
+    <field name="provisionTb" type="float" column="provision_tb" precision="10" scale="0" nullable="false"/>
+    <field name="provisionTeams" type="float" column="provision_teams" precision="10" scale="0" nullable="false"/>
+    <field name="catRef" type="integer" column="cat_ref" nullable="false"/>
+    <field name="picRef" type="text" column="pic_ref" nullable="false"/>
+    <field name="linkRef" type="text" column="link_ref" nullable="false"/>
+    <field name="partnerRef" type="integer" column="partner_ref" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,88 @@
+<!Doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+        <title>{% block title %}Teambonus - Adminbereich{% endblock %}</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href=" {{ asset('bundles/adminindex/css/bootstrap.css') }} " rel="stylesheet" type="text/css" />
+        <link href=" {{ asset('bundles/adminindex/css/sb-admin.css') }} " rel="stylesheet" type="text/css" />
+        <link href=" {{ asset('bundles/adminindex/css/datatables.css') }} " rel="stylesheet" type="text/css" />
+        <link href=" {{ asset('bundles/adminindex/css/datatables2.css') }} " rel="stylesheet" type="text/css" />
+        <link href=" {{ asset('bundles/adminindex/css/fontawesome.css') }} " rel="stylesheet" type="text12/css" />
+        <script src=" {{ asset('bundles/adminindex/js/angular.js') }} "></script>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src=" {{ asset('bundles/adminindex/js/bootstrap.min.js') }} "></script>
+        <script src=" {{ asset('bundles/adminindex/js/textAngular.min.js') }} "></script>
+        <script src=" {{ asset('bundles/adminindex/js/textAngular-sanitize.min.js') }} "></script>
+        <script src=" {{ asset('bundles/adminindex/js/textAngular-rangy.min.js') }} "></script>
+        <script src=" {{ asset('bundles/adminindex/js/controller/app.js') }} "></script>
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body ng-app="MyApp">
+
+        <div id="wrapper">
+                    <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/admin">Adminbereich</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/admin/clubs/all"><i class="fa fa-fw fa-group"></i> Vereine & Teams</a>
+                    </li>
+                    <li>
+                        <a href="/admin/shops/all"><i class="fa fa-tags"></i> Shops</a>
+                    </li>
+                    <li>
+                        <a href="/admin/payouts/all"><i class="fa fa-fw fa-calendar"></i> Auszahlungen</a>
+                    </li>
+                    <li>
+                        <a href="/admin/sales/all"><i class="fa fa-tags"></i> Käufe</a>
+                    </li>
+                    <li>
+                        <a href="/admin/support/all"><i class="fa fa-fw fa-support"></i> Support</a>
+                    </li>
+                    <li>
+                        <a href="/"><i class="fa fa-fw fa-home"></i> Homepage</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+           {% block body %}{% endblock %}
+        </div>
+        <script src=" {{ asset('bundles/adminindex/js/datatables.js') }} "></script>
+        <script src=" {{ asset('bundles/adminindex/js/bootstrap.datatables.js') }} "></script>
+
+    </body>
+    
+</html>

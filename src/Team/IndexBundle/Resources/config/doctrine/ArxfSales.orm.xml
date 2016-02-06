@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\ArxfSales" table="arxf_sales">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="shopRef" type="integer" column="shop_ref" nullable="false"/>
+    <field name="teamRef" type="integer" column="team_ref" nullable="false"/>
+    <field name="sale" type="float" column="sale" precision="10" scale="0" nullable="false"/>
+    <field name="dateChecked" type="date" column="date_checked" nullable="false"/>
+    <field name="dateSale" type="date" column="date_sale" nullable="false"/>
+    <field name="description" type="text" column="description" nullable="false"/>
+    <field name="state" type="integer" column="state" nullable="false"/>
+    <field name="saleTb" type="float" column="sale_tb" precision="10" scale="0" nullable="false"/>
+    <field name="saleTeam" type="float" column="sale_team" precision="10" scale="0" nullable="false"/>
+  </entity>
+</doctrine-mapping>

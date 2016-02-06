@@ -1,0 +1,81 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+            <h1 class="page-header">Team <small>{{club.clubName}} - {{team.teamName}} </small></h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> Bearbeiten </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">                            
+                                        {{ form_start(form) }}
+                                        {{ form_errors(form) }}	
+                                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                                <div class="alert alert-info">
+                                                    {{ flashMessage }}
+                                                </div>                    
+                                            {% endfor %}
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Stammdaten</a></li>
+                                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Ansprechpartner</a></li>
+                                                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Bankdaten</a></li>
+                                                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Einkäufe</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="home">
+                                                    <h4>Teamname</h4>
+                                                    {{ form_widget(form.teamName, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>Über das Team</h4>
+                                                    {{ form_widget(form.aboutTeam, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>Website</h4>
+                                                    {{ form_widget(form.website, { 'attr': {'class': 'form-control'}} ) }}
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="profile">
+                                                    <h4>Vorname</h4>
+                                                    {{ form_widget(form.apFirst, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>Nachname</h4>
+                                                    {{ form_widget(form.apLast, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>E-Mail</h4>
+                                                    {{ form_widget(form.apMail, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>Telefon</h4>
+                                                    {{ form_widget(form.apPhone, { 'attr': {'class': 'form-control'}} ) }}
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="messages">
+                                                    <h4>Kontonummer</h4>
+                                                    {{ form_widget(form.accNo, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>Bankleitzahl</h4>
+                                                    {{ form_widget(form.blz, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>Bank</h4>
+                                                    {{ form_widget(form.bankName, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>Kontoinhaber</h4>
+                                                    {{ form_widget(form.accOwner, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>IBAN</h4>
+                                                    {{ form_widget(form.iban, { 'attr': {'class': 'form-control'}} ) }}
+                                                    <h4>BIC</h4>
+                                                    {{ form_widget(form.bic, { 'attr': {'class': 'form-control'}} ) }}
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="settings">..fg.</div>
+                                            </div>
+                                                <br />
+                                            {{ form_widget(form.save, { 'attr': {'class': 'btn btn-default'}} ) }}
+                                        {{ form_end(form) }}
+                                    </div>
+                                </div>
+                            </div>
+                    </div>            
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>
+<script>
+    $('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
+{% endblock %}

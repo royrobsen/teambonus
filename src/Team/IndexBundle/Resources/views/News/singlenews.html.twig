@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+            <!-- Section Title -->
+            <section class="section-title img-news">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>{{post.postTitle}}</h1>
+                </div>
+            </section>
+            <!-- End Section Title -->
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>/</li>
+                            <li><a href="/neuigkeiten">Neuigkeiten</a></li>
+                            <li>/</li>
+                            <li>{{post.PostTitle}}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="/img/img-theme/shp.png" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container padding-top">
+                    <div class="row">
+
+                        <!-- content Column Left -->
+                        <div class="col-md-8">
+                            <!-- Single Post -->
+                            <div class="panel-box">
+
+                                <!-- Title Post -->
+                                <div class="titles">
+                                    <h4>{{post.PostTitle}}</h4>
+                                </div>
+                                <!-- Title Post -->
+
+                                <!-- Post Item -->
+                                <div class="post-item single-news">
+                                    <div class="row">
+                                        <!-- Image Post -->
+                                        <div class="col-md-12">
+                                            <p class="data-info">{{post.postDateGmT.date|date('d M Y')}}  / <i class="fa fa-comments"></i><a href="#">5</a></p>
+                                            <!-- Post image-->
+                                            <div>
+                                                  <img class="img-responsive" src="/img/blog/3.jpg">
+                                            </div>
+                                            <!-- End Post image-->
+                                        </div>
+                                        <!-- End Image Post -->
+                                        <!-- Info Post -->
+                                        <div class="col-md-12 padding-top-mini">
+                                            {{post.postContent}}
+                                        </div>
+                                        <!-- End Info Post -->
+                                   </div>
+                                </div>
+                                 <!-- End Post Item -->
+                            </div>
+                            <!-- End Single Post -->
+
+                        </div>
+                         <!-- End content Left -->
+                        <!-- content Sidebar Center -->
+                        <aside class="col-md-4">                     
+
+                            <!-- Video presentation -->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4>Anzeige</h4>
+                                </div>
+                                <!-- Locations Video --> 
+                                <div class="row">
+                                    <iframe src="http://www.youtube.com/embed/l12OhR6nxiM" class="video"></iframe>
+                                    <div class="col-md-12">
+                                        <h4>Rio de Janeiro</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris.</p>
+                                    </div>
+                                </div>
+                                <!-- End Locations Video --> 
+                            </div>  
+                            <!-- End Video presentation-->
+
+                            <!-- Widget Categories-->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4>Kategorien</h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="list">
+                                            <li><i class="fa fa-check"></i><a href="#">Design</a></li>
+                                            <li><i class="fa fa-check"></i><a href="#">Photos</a></li>
+                                            <li><i class="fa fa-check"></i><a href="#">Videos</a></li>
+                                            <li><i class="fa fa-check"></i><a href="#">Lifestyle</a></li>
+                                            <li><i class="fa fa-check"></i><a href="#">Technology</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>  
+                            <!-- End Widget Categories-->  
+
+                            <!-- Widget Text-->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4>Widget Text</h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, incididunt ut labore et dolore.</p>
+                                    </div>
+                                </div>
+                            </div>  
+                            <!-- End Widget Text-->
+                        </aside>
+                        <!-- End content Sidebar Center -->
+                    </div>                     
+                </div>  
+                <!-- End Content Central -->
+{% endblock %}

@@ -1,0 +1,115 @@
+#
+# Start page routing
+#
+
+team_index_homepage:
+    path:     /
+    defaults: { _controller: TeamIndexBundle:Default:index }
+        
+team_index_jsonclubs:
+    path:     /jsonclubs
+    defaults: { _controller: TeamIndexBundle:Default:jsonclubs }
+
+team_clubs_all:
+    path:     /vereine
+    defaults: { _controller: TeamIndexBundle:Clubs:clubs }
+    
+team_clubs_new:
+    path:     /neuer-verein
+    defaults: { _controller: TeamIndexBundle:Clubs:new }
+    
+team_clubs_jsonfullclubs:
+    path:     /jsonfullclubs
+    defaults: { _controller: TeamIndexBundle:Clubs:jsonfullclubs }
+    
+team_clubs_jsonteamlist:
+    path:     /jsonteamlist
+    defaults: { _controller: TeamIndexBundle:Clubs:jsonteamlist }
+    
+team_clubs_team:
+    path:     /team/{teammatch}
+    defaults: { _controller: TeamIndexBundle:Clubs:team }
+    
+team_clubs_add:
+    path:     /add/{id}
+    defaults: { _controller: TeamIndexBundle:Clubs:add }
+    
+#
+# Shop routing
+#
+
+team_shops_all:
+    path:     /shops
+    defaults: { _controller: TeamIndexBundle:Shops:shops }
+
+team_shops_jsonfullshops:
+    path:     /jsonfullshops
+    defaults: { _controller: TeamIndexBundle:Shops:jsonfullshops }
+    
+team_shops_jsonshops:
+    path:     /jsonshops
+    defaults: { _controller: TeamIndexBundle:Default:jsonshops }  
+    
+#
+# Profile routing
+#
+
+team_profile:
+    path:     /profile/{id}
+    defaults: { _controller: TeamIndexBundle:Profile:profile }
+    
+    
+team_index_login:
+    path:   /login
+    defaults: { _controller: TeamIndexBundle:Security:login }
+
+team_index_logincheck:
+    path:   /login_check
+    defaults: { _controller: TeamIndexBundle:Security:login_check }
+
+logout:
+    path: /logout
+    
+#
+# Static site routing
+#   
+
+team_static_impressum:
+    path:     /impressum
+    defaults: { _controller: TeamIndexBundle:Default:impressum }
+    
+team_static_faq:
+    path:     /faq
+    defaults: { _controller: TeamIndexBundle:Default:faq }
+    
+team_static_kontakt:
+    path:     /kontakt
+    defaults: { _controller: TeamIndexBundle:Default:kontakt }
+    
+team_static_datenschutz:
+    path:     /datenschutz
+    defaults: { _controller: TeamIndexBundle:Default:datenschutz }
+    
+#
+# Users action routes
+# 
+
+team_new_team:
+    path:     /neu/{id}
+    defaults: { _controller: TeamIndexBundle:Clubs:newTeam }
+    
+team_new_shop:
+    path:     /neuer-shop
+    defaults: { _controller: TeamIndexBundle:Shops:newShop }
+    
+# News action routes
+
+team_news:
+    path:     /neuigkeiten
+    defaults: { _controller: TeamIndexBundle:News:news }
+
+team_news_single:
+    path:     /neuigkeiten/{id}
+    defaults: { _controller: TeamIndexBundle:News:singleNews }
+    
+    

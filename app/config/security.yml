@@ -1,0 +1,48 @@
+# app/config/security.yml
+security:
+    
+    encoders:
+       Team\IndexBundle\Entity\ArxfTeams:
+         algorithm: bcrypt
+         
+    # http://symfony.com/doc/current/book/security.html#hierarchical-roles
+    role_hierarchy:
+        ROLE_USER:       ROLE_USER
+        ROLE_SPECIAL:     [ROLE_USER]
+        ROLE_ADMIN:       [ROLE_USER, ROLE_SPECIAL]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_SPECIAL, ROLE_ALLOWED_TO_SWITCH]
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        
+        db_provider:
+            entity:
+                class: TeamIndexBundle:ArxfTeams
+                property: apMail
+                
+    # the main part of the security, where you can set up firewalls
+    # for specific sections of your app
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        default:
+            anonymous: ~
+            pattern: ^/
+            form_login:
+                login_path: /login
+                check_path: /login_check
+            logout:
+                path:   /logout
+                target: /
+            #http_basic: ~
+            provider: db_provider
+            
+            
+    # with these settings you can restrict or allow access for different parts
+    # of your application based on roles, ip, host or methods
+    # http://symfony.com/doc/current/cookbook/security/access_control.html
+    access_control:
+        #- { path: /admin/login_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }

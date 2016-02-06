@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-xs-12 col-md-8">
+            <div class="box-blue">
+                <h1>Passwort erstellen</h1>
+                {% for flashMessage in app.session.flashbag.get('warning') %}
+                    <div class="alert alert-danger">
+                    <strong>Achtung!</strong>
+                    {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success">
+                    <strong>Glückwunsch!</strong>
+                    {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                <div class="form-group">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}	
+                    <h5>Passwort:</h5>
+                    {{ form_widget(form.password, { 'attr': {'class': 'form-control', 'required' : 'required'}} ) }} 
+                    <h5>Passwort wiederholen:</h5>
+                    {{ form_widget(form.password2, { 'attr': {'class': 'form-control', 'required' : 'required'}} ) }}<br />
+                    {{ form_widget(form.save, { 'attr': {'class': 'btn btn-primary'}} ) }}
+                    {{ form_end(form) }}    
+                </div>
+            </div>       
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <div class="box-blue">
+                Bitte erstelle dir hier ein neues Passwort!
+            </div>       
+        </div>
+    </div>
+{% endblock %}  

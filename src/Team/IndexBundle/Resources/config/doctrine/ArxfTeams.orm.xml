@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\ArxfTeams" table="arxf_teams">
+    <indexes>
+      <index name="IDX_391170F6B70D1EBA" columns="club_ref"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="teamName" type="text" column="team_name" nullable="false"/>
+    <field name="clubRef" type="integer" column="club_ref" nullable="true"/>
+    <field name="apFirst" type="text" column="ap_first" nullable="false"/>
+    <field name="apLast" type="text" column="ap_last" nullable="false"/>
+    <field name="apMail" type="text" column="ap_mail" nullable="false"/>
+    <field name="sportRef" type="integer" column="sport_ref" nullable="true"/>
+    <field name="aboutTeam" type="text" column="about_team" nullable="true"/>
+    <field name="teamPic" type="text" column="team_pic" nullable="false"/>
+    <field name="teamRefid" type="string" column="team_refid" length="150" nullable="true"/>
+    <field name="iban" type="text" column="iban" nullable="true"/>
+    <field name="blz" type="text" column="blz" nullable="true"/>
+    <field name="accNo" type="text" column="acc_no" nullable="true"/>
+    <field name="bankName" type="text" column="bank_name" nullable="true"/>
+    <field name="accOwner" type="text" column="acc_owner" nullable="true"/>
+    <field name="passpalabra" type="text" column="passpalabra" nullable="false"/>
+    <field name="website" type="text" column="website" nullable="true"/>
+    <field name="apPhone" type="text" column="ap_phone" nullable="true"/>
+    <field name="bic" type="text" column="bic" nullable="true"/>
+    <field name="groupId" type="integer" column="group_id" nullable="false"/>
+        <many-to-one
+            field="club"
+            target-entity="ArxfClubs"
+            inversed-by="team"
+            join-column="club">
+
+            <join-column name="club_ref" referenced-column-name="id" />
+        </many-to-one>
+  </entity>
+</doctrine-mapping>

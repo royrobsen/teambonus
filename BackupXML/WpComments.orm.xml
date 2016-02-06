@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\WpComments" table="wp_comments">
+    <indexes>
+      <index name="comment_post_ID" columns="comment_post_ID"/>
+      <index name="comment_approved_date_gmt" columns="comment_approved,comment_date_gmt"/>
+      <index name="comment_date_gmt" columns="comment_date_gmt"/>
+      <index name="comment_parent" columns="comment_parent"/>
+      <index name="comment_author_email" columns="comment_author_email"/>
+    </indexes>
+    <id name="commentId" type="bigint" column="comment_ID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="commentPostId" type="bigint" column="comment_post_ID" nullable="false"/>
+    <field name="commentAuthor" type="text" column="comment_author" nullable="false"/>
+    <field name="commentAuthorEmail" type="string" column="comment_author_email" length="100" nullable="false"/>
+    <field name="commentAuthorUrl" type="string" column="comment_author_url" length="200" nullable="false"/>
+    <field name="commentAuthorIp" type="string" column="comment_author_IP" length="100" nullable="false"/>
+    <field name="commentDate" type="datetime" column="comment_date" nullable="false"/>
+    <field name="commentDateGmt" type="datetime" column="comment_date_gmt" nullable="false"/>
+    <field name="commentContent" type="text" column="comment_content" nullable="false"/>
+    <field name="commentKarma" type="integer" column="comment_karma" nullable="false"/>
+    <field name="commentApproved" type="string" column="comment_approved" length="20" nullable="false"/>
+    <field name="commentAgent" type="string" column="comment_agent" length="255" nullable="false"/>
+    <field name="commentType" type="string" column="comment_type" length="20" nullable="false"/>
+    <field name="commentParent" type="bigint" column="comment_parent" nullable="false"/>
+    <field name="userId" type="bigint" column="user_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

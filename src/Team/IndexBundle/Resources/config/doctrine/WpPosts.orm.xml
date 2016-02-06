@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\WpPosts" table="wp_posts">
+    <indexes>
+      <index name="post_name" columns="post_name"/>
+      <index name="type_status_date" columns="post_type,post_status,post_date,ID"/>
+      <index name="post_parent" columns="post_parent"/>
+      <index name="post_author" columns="post_author"/>
+    </indexes>
+    <id name="id" type="bigint" column="ID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="postAuthor" type="bigint" column="post_author" nullable="false"/>
+    <field name="postDate" type="datetime" column="post_date" nullable="false"/>
+    <field name="postDateGmt" type="datetime" column="post_date_gmt" nullable="false"/>
+    <field name="postContent" type="text" column="post_content" nullable="false"/>
+    <field name="postTitle" type="text" column="post_title" nullable="false"/>
+    <field name="postExcerpt" type="text" column="post_excerpt" nullable="false"/>
+    <field name="postStatus" type="string" column="post_status" length="20" nullable="false"/>
+    <field name="commentStatus" type="string" column="comment_status" length="20" nullable="false"/>
+    <field name="pingStatus" type="string" column="ping_status" length="20" nullable="false"/>
+    <field name="postPassword" type="string" column="post_password" length="20" nullable="false"/>
+    <field name="postName" type="string" column="post_name" length="200" nullable="false"/>
+    <field name="toPing" type="text" column="to_ping" nullable="false"/>
+    <field name="pinged" type="text" column="pinged" nullable="false"/>
+    <field name="postModified" type="datetime" column="post_modified" nullable="false"/>
+    <field name="postModifiedGmt" type="datetime" column="post_modified_gmt" nullable="false"/>
+    <field name="postContentFiltered" type="text" column="post_content_filtered" nullable="false"/>
+    <field name="postParent" type="bigint" column="post_parent" nullable="false"/>
+    <field name="guid" type="string" column="guid" length="255" nullable="false"/>
+    <field name="menuOrder" type="integer" column="menu_order" nullable="false"/>
+    <field name="postType" type="string" column="post_type" length="20" nullable="false"/>
+    <field name="postMimeType" type="string" column="post_mime_type" length="100" nullable="false"/>
+    <field name="commentCount" type="bigint" column="comment_count" nullable="false"/>
+  </entity>
+</doctrine-mapping>

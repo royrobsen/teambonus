@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+            <!-- Section Title -->
+            <section class="section-title img-contact">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>Contact Us</h1>
+                </div>
+            </section>
+            <!-- End Section Title -->
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>/</li>
+                            <li>Kontakt</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <section class="container">
+                    <div class="row padding-top">
+                        <!-- Left Content -->
+                        <div class="col-md-4">
+                            <aside class="panel-box">
+                                <div class="titles">
+                                    <h4>Teambonus.de </h4>
+                                </div>
+                                <address>
+                                  <strong>Teambonus.de</strong><br>
+                                  <i class="fa fa-map-marker"></i><strong>Adresse: </strong> Hofweide 34<br>
+                                  <i class="fa fa-plane"></i><strong>Stadt: </strong>21031 Hamburg<br>
+                                  <i class="fa fa-phone"></i> <abbr title="Phone">Tel:</abbr> 01734158301
+                                </address>
+                            </aside>
+
+                            <aside class="panel-box">
+                                <div class="titles">
+                                    <h4>Email Kontakt</h4>
+                                </div>
+                                <address>
+                                  <i class="fa fa-envelope"></i><strong>Email:</strong><a href="mailto:info@teambonus.de"> info@teambonus.de</a><br>
+                                </address>
+                            </aside>
+                        </div>
+                        <!-- End Left Content -->
+
+                        <!-- Right Content -->
+                        <div class="col-md-8">
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4>Kontaktformular</h4>
+                                </div>
+                                <!-- Form Contact -->
+                                {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>                    
+                                {% endfor %}
+                                {{form_start(form)}}
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label>Dein Name *</label>
+                                                {{ form_row ( form.name ) }}
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Deine E-Mail *</label>
+                                                {{ form_row ( form.email ) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><br />
+                                                <label>Nachricht *</label>
+                                                {{ form_row ( form.message, {'attr': {'style': 'resize: none; height: 200px;'} }) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><br />
+                                            {{ form_row ( form.save, {'attr': {'class': 'btn btn-lg btn-primary'} }) }}
+                                        </div>
+                                    </div>
+                                    {{ form_end ( form ) }}
+                                <!-- End Form Contact -->
+                                <div class="result"></div>
+                            </div>
+                        </div>
+                        <!-- End Right Content -->
+                    </div>
+                </section>
+                <!-- End Content Central -->
+{% endblock %}

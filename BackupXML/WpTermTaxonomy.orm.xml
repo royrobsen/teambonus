@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\WpTermTaxonomy" table="wp_term_taxonomy">
+    <indexes>
+      <index name="taxonomy" columns="taxonomy"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="term_id_taxonomy" columns="term_id,taxonomy"/>
+    </unique-constraints>
+    <id name="termTaxonomyId" type="bigint" column="term_taxonomy_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="termId" type="bigint" column="term_id" nullable="false"/>
+    <field name="taxonomy" type="string" column="taxonomy" length="32" nullable="false"/>
+    <field name="description" type="text" column="description" nullable="false"/>
+    <field name="parent" type="bigint" column="parent" nullable="false"/>
+    <field name="count" type="bigint" column="count" nullable="false"/>
+  </entity>
+</doctrine-mapping>

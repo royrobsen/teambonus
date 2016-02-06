@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Team\IndexBundle\Entity\ArxfClubs" table="arxf_clubs">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="clubName" type="text" column="club_name" nullable="false"/>
+    <field name="clubPic" type="text" column="club_pic" nullable="false"/>
+    <field name="active" type="integer" column="active" nullable="false"/>
+            <one-to-many
+            field="team"
+            target-entity="ArxfTeams"
+            mapped-by="club" />
+  </entity>
+</doctrine-mapping>
