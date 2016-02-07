@@ -90,6 +90,10 @@ team_static_datenschutz:
     path:     /datenschutz
     defaults: { _controller: TeamIndexBundle:Default:datenschutz }
     
+team_static_neuesteam:
+    path:     /neues-team
+    defaults: { _controller: TeamIndexBundle:Default:neuesteam }  
+    
 #
 # Users action routes
 # 

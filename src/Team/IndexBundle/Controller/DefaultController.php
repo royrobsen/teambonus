@@ -105,6 +105,12 @@ class DefaultController extends Controller
             return $this->render('TeamIndexBundle:Static:datenschutz.html.twig');
             
         }
+
+        public function neuesteamAction() {
+            
+            return $this->render('TeamIndexBundle:Static:neuesteam.html.twig');
+            
+        }  
         
         public function kontaktAction(Request $request) {
             

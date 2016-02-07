@@ -4,7 +4,7 @@
             <section class="section-title img-news">
                 <div class="overlay-bg"></div>
                 <div class="container">
-                    <h1>Login</h1>
+                    <h1>Neues Team</h1>
                 </div>
             </section>
             <!-- End Section Title -->
@@ -17,7 +17,7 @@
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li>Login</li>
+                            <li>Neues Team</li>
                         </ul>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
 
                                 <!-- Title Post -->
                                 <div class="titles">
-                                    <h4>Login</h4>
+                                    <h4>Neues Team</h4>
                                 </div>
                                 <!-- Title Post -->
 
@@ -45,33 +45,20 @@
                                 <div class="post-item single-news">
                                     <div class="row">
                                         <!-- Info Post -->
-                                        <div class="col-lg-12">
-                                            <div class="alert alert-info">
-                                                Damit du dein Team verwalten und Auszahlungen tätigen kannst, musst du dich zunächst einloggen. 
-                                                Solltest du Probleme mit dem Login haben, benutze bitte das <u><a href="/kontakt" class="">Kontaktformular</a></u>.     
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 padding-top-mini">
-                                            {% if error %}
-                                            <div>{{ error.messageKey|trans(error.messageData) }}</div>
-                                            {% endif %}
-                                            <div class="form-group">
-                                                <form action="{{ path('team_index_logincheck') }}" method="post">
-                                                    <label for="username">E-Mailadresse:</label>
-                                                    <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" />
-
-                                                    <label for="password">Passwort:</label>
-                                                    <input type="password" class="form-control" id="password" name="_password" />
-
-
-                                                    <input type="hidden" name="_target_path" value="/" />
-                                                    <br />
-
-                                                    <button class="btn btn-info btn-block" type="submit">Anmelden</button><br />
-                                                    <a href="passwort-vergessen">Du hast dein Passwort vergessen? </a> <br />
-                                                    <a href="neues-team">Noch kein Teamzugang? </a> 
-                                                </form>
-                                            </div>
+                                        <div class="col-md-12 padding-top-mini">
+                                            <h4>Du möchtest die Mannschaftskasse deines Teams auffüllen?</h4>
+                                            <p>
+                                                Teambonus hilft deiner Mannschaft über Online-Shopping eure Kasse zu füllen. Auf diesem Weg benötigt ihr keinen externen Sponsor mehr.
+                                                Um den Bonus ausgezahlt zu bekommen, benötigt euer Team einen einzigen Zugang zu Teambonus. Das kann idealerweise euer Kassenwart oder euer Kapitän sein.
+                                                <br /><br />
+                                            <h4>Was musst du dafür tun?</h4>
+                                            Als erstes kannst du hier deinen <a href="/vereine">Verein suchen</a> und  schauen, ob deine Mannschaft bereits angemeldet ist. Sollte das nicht der Fall sein, kannst du deine Mannschaft einfach hinzufügen.
+                                            <br />
+                                            <strong>Falls du deinen Verein nicht finden solltest, kannst du deinen <a href="/neuer-verein">Verein hinzufügen</a> und anschließend dein Team erstellen.</strong>
+                                            <br /><br />
+                                            <h4>Wie geht es dann weiter?</h4>
+                                            Nachdem du dein Team angemeldet hast, werden wir deine Angaben prüfen und informieren dich per E-Mail, sobald die Freischaltung erfolgt ist. Danach kann jeder über Teambonus.de deine Mannschaft auswählen, online shoppen und einen Bonus für euch sammeln. <strong>Dafür ist keine Anmeldung mehr nötig.</strong>
+                                            </p>
                                         </div>
                                         <!-- End Info Post -->
                                    </div>
