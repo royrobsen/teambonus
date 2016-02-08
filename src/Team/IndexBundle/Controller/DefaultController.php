@@ -111,6 +111,18 @@ class DefaultController extends Controller
             return $this->render('TeamIndexBundle:Static:neuesteam.html.twig');
             
         }  
+  
+        public function teamsponsernAction() {
+            
+            return $this->render('TeamIndexBundle:Static:teamsponsern.html.twig');
+            
+        }        
+  
+        public function bonuserhaltenAction() {
+            
+            return $this->render('TeamIndexBundle:Static:bonuserhalten.html.twig');
+            
+        }           
         
         public function kontaktAction(Request $request) {
             

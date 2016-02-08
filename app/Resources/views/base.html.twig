@@ -109,10 +109,10 @@
                                 <a href="#">Sponsoring</a>
                                 <div class="sf-mega">
                                     <div class="col-md-3">
-                                        <h4>Sports Navigation</h4>
+                                        <h4>Sponsoren</h4>
                                         <ul>                                                
-                                            <li><a href="sports.html">Football Soccer</a></li>
-                                            <li><a href="sports.html">Motocross</a></li>
+                                            <li><a href="/sponsoren/regionale-sponsoren">Regionale Sponsoren</a></li>
+                                            <li><a href="/sponsoren/nationale-sponsoren">Nationale Sponsoren</a></li>
                                             <li><a href="sports.html">Bmx</a></li>
                                             <li><a href="sports.html">Skater</a></li>
                                         </ul>
@@ -149,6 +149,26 @@
                             <li>
                                 <a href="/kontakt">Kontakt</a>
                             </li> 
+                            {% if not is_granted('ROLE_USER') %}
+                            <li>
+                                <a href="/login">Login</a>
+                            </li>
+                            {% endif %}
+                            {% if is_granted('ROLE_USER') %}
+                            <li>
+                                <a href="/logout">Logout</a>
+                            </li>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a href="/admin">Dashboard</a>
+                            </li>
+                            {% endif %}
+                            {% if app.request.cookies.has('teambonus') %}
+                            <li>
+                                <a href="/team/{{ app.request.cookies.get('teambonus') }}-{{ app.request.cookies.get('teambonusClub')|slugify }}-{{ app.request.cookies.get('teambonusTeam') }}">{{ app.request.cookies.get('teambonusClub')}} - {{ app.request.cookies.get('teambonusTeam') }}</a>
+                            </li>
+                            {% endif %}
                         </ul>
                         <!-- End Menu-->
                     </div>
@@ -171,7 +191,7 @@
                                     </h1>   
                                     <p class="animated fadeInRight delay1">Nutze die Kaufkraft deiner Mannschaft und der Fans, um die Mannschaftskasse zu füllen.</p> 
                                     <div class="more animated fadeInRight delay2">
-                                        <a href="#" class="btn btn-primary" name="subscribe" >Mehr erfahren</a>
+                                        <a href="/team-sponsern" class="btn btn-primary" name="subscribe" >Mehr erfahren</a>
                                     </div>
                                 </div>    
                             </div>                     
@@ -186,13 +206,13 @@
                         <div class="overlay-bg"></div>
                          <div class="container"> 
                             <div class="row">
-                                <div class="col-md-7">
+                                <div class="col-md-12">
                                     <h1 class="animated fadeInRight">
-                                         Dominique Daniels Returns
+                                        Unterstütze dein Team!
                                     </h1>   
-                                    <p class="animated fadeInRight delay1">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p> 
+                                    <p class="animated fadeInRight delay1">Durch jeden Einkauf erhält deine Mannschaft einen Bonus zurück.</p> 
                                     <div class="more animated fadeInRight delay2">
-                                        <a href="#" class="btn btn-primary" name="subscribe" >More Info</a>
+                                        <a href="/bonus-erhalten" class="btn btn-primary" name="subscribe" >Mehr erfahren</a>
                                     </div>
                                 </div>    
                             </div>                     
@@ -305,7 +325,7 @@
                                         <li><i class="fa fa-clock-o"></i>Anstoß, 15:00 Uhr</li> 
                                     </ul>
                                     <p>Bald ist es wieder soweit. Die EM 2016 findet in diesem Jahr in Frankreich statt. Wir sind gespannt wer dieses Jahr den Titel holen wird.</p>
-                                    <a class="btn btn-primary" href="#">
+                                    <a class="btn btn-primary" href="/events/europameisterschaft-2016">
                                         Event anzeigen
                                         <i class="fa fa-trophy"></i>
                                     </a>

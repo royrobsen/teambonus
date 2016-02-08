@@ -21,6 +21,8 @@
         <script src=" {{ asset('bundles/adminindex/js/textAngular-sanitize.min.js') }} "></script>
         <script src=" {{ asset('bundles/adminindex/js/textAngular-rangy.min.js') }} "></script>
         <script src=" {{ asset('bundles/adminindex/js/controller/app.js') }} "></script>
+         <link href="https://imperavi.com/assets/js/redactor/redactor.css" rel="stylesheet">
+  <script src="https://imperavi.com/assets/js/redactor/redactor.js"></script>
         {% block javascripts %}
         {% endblock %}
     </head>
@@ -67,6 +69,9 @@
                     </li>
                     <li>
                         <a href="/admin/sales/all"><i class="fa fa-tags"></i> Käufe</a>
+                    </li>
+                    <li>
+                        <a href="/admin/news/all"><i class="fa fa-tags"></i> Neuigkeiten</a>
                     </li>
                     <li>
                         <a href="/admin/support/all"><i class="fa fa-fw fa-support"></i> Support</a>

@@ -94,6 +94,14 @@ team_static_neuesteam:
     path:     /neues-team
     defaults: { _controller: TeamIndexBundle:Default:neuesteam }  
     
+team_static_teamsponsern:
+    path:     /team-sponsern
+    defaults: { _controller: TeamIndexBundle:Default:teamsponsern }  
+
+team_static_bonuserhalten:
+    path:     /bonus-erhalten
+    defaults: { _controller: TeamIndexBundle:Default:bonuserhalten }  
+    
 #
 # Users action routes
 # 

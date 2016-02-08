@@ -1,0 +1,42 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+            <h1 class="page-header">Verein-</h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> Bearbeiten </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">                            
+                                        {{ form_start(form) }}
+                                        {{ form_errors(form) }}	
+                                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                                <div class="alert alert-info">
+                                                    {{ flashMessage }}
+                                                </div>                    
+                                            {% endfor %}
+                                            <h4>Posttitel</h4>
+                                            {{ form_widget(form.postTitle, { 'attr': {'class': 'form-control'}} ) }}
+                                            {{ form_widget(form.postContent, { 'attr': {'class': 'form-control redactor'}} ) }}
+                                            {{ form_widget(form.save, { 'attr': {'class': 'btn btn-default'}} ) }}
+                                        {{ form_end(form) }}
+                                            <script type="text/javascript">
+                                            $(document).ready(function(){
+                                                $('.redactor').redactor();
+                                            });
+                                            </script>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>            
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>
+
+{% endblock %}

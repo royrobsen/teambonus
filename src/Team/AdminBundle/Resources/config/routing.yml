@@ -54,3 +54,14 @@ team_admin_sale:
     path:     /admin/sales/{id}
     defaults: { _controller: TeamAdminBundle:Sales:sale }
     
+team_admin_news:
+    path:     /admin/news/all
+    defaults: { _controller: TeamAdminBundle:News:all }    
+    
+team_admin_jsonallnews:
+    path:     /admin/news/jsonallnews
+    defaults: { _controller: TeamAdminBundle:News:jsonallnews }
+    
+team_admin_post:
+    path:     /admin/post/{id}
+    defaults: { _controller: TeamAdminBundle:News:post }  
