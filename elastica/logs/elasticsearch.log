@@ -92,3 +92,6 @@ org.elasticsearch.index.shard.IllegalIndexShardStateException: [search][0] Curre
 [2016-02-23 18:46:34,406][INFO ][cluster.routing.allocation.decider] [Neptune] low disk watermark [85%] exceeded on [JuGh864DTz6czagtm5Al4g][Neptune] free: 39.5gb[10.6%], replicas will not be assigned to this node
 [2016-02-23 18:47:04,418][INFO ][cluster.routing.allocation.decider] [Neptune] low disk watermark [85%] exceeded on [JuGh864DTz6czagtm5Al4g][Neptune] free: 39.5gb[10.6%], replicas will not be assigned to this node
 [2016-02-23 18:47:34,420][INFO ][cluster.routing.allocation.decider] [Neptune] low disk watermark [85%] exceeded on [JuGh864DTz6czagtm5Al4g][Neptune] free: 39.5gb[10.6%], replicas will not be assigned to this node
+[2016-02-23 18:48:04,418][INFO ][cluster.routing.allocation.decider] [Neptune] low disk watermark [85%] exceeded on [JuGh864DTz6czagtm5Al4g][Neptune] free: 39.5gb[10.6%], replicas will not be assigned to this node
+[2016-02-23 18:48:34,422][INFO ][cluster.routing.allocation.decider] [Neptune] low disk watermark [85%] exceeded on [JuGh864DTz6czagtm5Al4g][Neptune] free: 39.5gb[10.6%], replicas will not be assigned to this node
+[2016-02-23 18:49:04,442][INFO ][cluster.routing.allocation.decider] [Neptune] low disk watermark [85%] exceeded on [JuGh864DTz6czagtm5Al4g][Neptune] free: 39.5gb[10.6%], replicas will not be assigned to this node
