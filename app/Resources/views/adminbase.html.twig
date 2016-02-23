@@ -8,19 +8,19 @@
     <meta name="author" content="">
         <title>{% block title %}Teambonus - Adminbereich{% endblock %}</title>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-        <link href=" {{ asset('bundles/adminindex/css/bootstrap.css') }} " rel="stylesheet" type="text/css" />
-        <link href=" {{ asset('bundles/adminindex/css/sb-admin.css') }} " rel="stylesheet" type="text/css" />
-        <link href=" {{ asset('bundles/adminindex/css/datatables.css') }} " rel="stylesheet" type="text/css" />
-        <link href=" {{ asset('bundles/adminindex/css/datatables2.css') }} " rel="stylesheet" type="text/css" />
-        <link href=" {{ asset('bundles/adminindex/css/fontawesome.css') }} " rel="stylesheet" type="text12/css" />
-        <script src=" {{ asset('bundles/adminindex/js/angular.js') }} "></script>
+        <link href="{{ asset('bundles/adminindex/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/adminindex/css/sb-admin.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/adminindex/css/datatables.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/adminindex/css/datatables2.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/adminindex/css/fontawesome.css') }}" rel="stylesheet" type="text12/css" />
+        <script src="{{ asset('bundles/adminindex/js/angular.js') }} "></script>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src=" {{ asset('bundles/adminindex/js/bootstrap.min.js') }} "></script>
-        <script src=" {{ asset('bundles/adminindex/js/textAngular.min.js') }} "></script>
-        <script src=" {{ asset('bundles/adminindex/js/textAngular-sanitize.min.js') }} "></script>
-        <script src=" {{ asset('bundles/adminindex/js/textAngular-rangy.min.js') }} "></script>
-        <script src=" {{ asset('bundles/adminindex/js/controller/app.js') }} "></script>
+        <script src="{{ asset('bundles/adminindex/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('bundles/adminindex/js/textAngular.min.js') }} "></script>
+        <script src="{{ asset('bundles/adminindex/js/textAngular-sanitize.min.js') }}"></script>
+        <script src="{{ asset('bundles/adminindex/js/textAngular-rangy.min.js') }}"></script>
+        <script src="{{ asset('bundles/adminindex/js/controller/app.js') }}"></script>
          <link href="https://imperavi.com/assets/js/redactor/redactor.css" rel="stylesheet">
   <script src="https://imperavi.com/assets/js/redactor/redactor.js"></script>
         {% block javascripts %}
@@ -85,8 +85,8 @@
         </nav>
            {% block body %}{% endblock %}
         </div>
-        <script src=" {{ asset('bundles/adminindex/js/datatables.js') }} "></script>
-        <script src=" {{ asset('bundles/adminindex/js/bootstrap.datatables.js') }} "></script>
+        <script src="{{ asset('bundles/adminindex/js/datatables.js') }}"></script>
+        <script src="{{ asset('bundles/adminindex/js/bootstrap.datatables.js') }}"></script>
 
     </body>
     
