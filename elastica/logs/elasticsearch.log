@@ -21,3 +21,10 @@
 [2016-02-23 17:58:23,172][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
 [2016-02-23 17:58:53,174][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
 [2016-02-23 17:59:23,175][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
+[2016-02-23 17:59:53,176][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
+[2016-02-23 18:00:23,179][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
+[2016-02-23 18:00:53,178][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
+[2016-02-23 18:01:23,179][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
+[2016-02-23 18:01:53,185][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
+[2016-02-23 18:02:23,185][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
+[2016-02-23 18:02:53,187][INFO ][cluster.routing.allocation.decider] [Feron] low disk watermark [85%] exceeded on [e90sc3RdQoW9DovH2qCSAA][Feron] free: 38.4gb[10.3%], replicas will not be assigned to this node
