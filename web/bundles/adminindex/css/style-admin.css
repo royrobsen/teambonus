@@ -1,0 +1,412 @@
+html, body
+{
+    height:100%;
+    margin: 0;
+    font-family: "Open Sans",sans-serif;
+}
+
+#upper-div{
+    background: #222;
+    color: #FAFAFA;
+    width: 100%;
+    position: fixed;
+    height: 40px;
+    z-index: 100;
+}
+
+#upper-div h2   {
+    margin: 0;
+    font-size: 14px;
+    padding: 10px;
+}
+
+#upper-div a {
+    color: #FAFAFA;
+}
+
+#leftmenu   {
+    float: left;
+    background: #222;
+    color: #FAFAFA;
+    font-size: 13px;
+    font-weight: 100;
+    min-width: 120px;
+    position: absolute;
+    position: fixed;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+}
+
+#leftmenu h4 {
+    padding: 5px 5px 5px 10px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 2em;
+}
+
+#leftmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2em;
+}
+
+#leftmenu li {
+    width: 100%;
+    color: #bbb;
+}
+
+#leftmenu a {
+    cursor: pointer;
+    display: block;
+    color: #FAFAFA;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+#leftmenu h4:hover {
+    background: #555;
+}
+
+.menudiv li a {
+	color: #bbb;
+	text-decoration: none;
+}
+
+.menudiv li a:hover {
+	color: #0074a2 !important;
+}
+
+#content    {
+    margin-left: 120px;
+    position: relative;
+	padding: 60px 15px 15px 15px;
+	color: #222;
+}
+
+#content h1 {
+	font-size: 20px;
+	margin: 0;
+	padding: 0 10px 0 0;
+	float: left;
+	font-weight: 400;
+}
+
+#content #article-table {
+	float: left;
+	margin-top: 20px;
+	background: none repeat scroll 0 0 #fff;
+	border-spacing: 0;
+	text-align: left;
+}
+
+.even {
+	background: #f9f9f9;
+}
+
+#content #article-table .odd_row {
+	background: #f9f9f9;
+}
+
+#content #article-table tr, #content #article-table td {
+	padding: 8px 10px;
+	font-size: 13px;
+	vertical-align: top;
+}
+
+#content table a {
+	color: #0074a2;
+	text-decoration: none;
+}
+
+#content table a:hover {
+	color: #2ea2cc;
+}
+
+#content th {
+	border-bottom: 1px solid #e1e1e1;
+	font-size: 13px;
+	font-weight: 300;
+	padding: 8px 10px;
+}
+
+#content .actions_div {
+	color: #bbe;
+}
+
+#field    {
+    border: 1px solid grey;
+}
+
+#goal{
+    margin: 0 auto;
+    width: 40px;
+    height: 20px;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+}
+
+.player {
+    text-align: center;
+    padding-top: 5px;
+    display: block;
+}
+
+#field table {
+    width: 100%;
+}
+
+#field td {
+    text-align: center;
+
+}
+
+
+#funfer{
+    margin: 0 auto;
+    width: 60px;
+    height: 25px;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+#sechzehner{
+    margin: 0 auto;
+    width: 85px;
+    height: 45px;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+#funfer1{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 60px;
+    height: 25px;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+}
+
+#sechzehner1{
+    margin: 0 auto;
+    width: 85px;
+    height: 45px;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+}
+
+#middleline   {
+    height: 1px;
+    width: 100%;
+    background-color: grey;
+}
+
+.block {
+    float: left;   
+    max-width: 700px;
+    padding-left: 20px;
+}
+
+.block input, .block select {
+	float: right;
+}
+
+.block textarea {
+	width: 600px;
+	height: 500px;
+}
+
+.btn-primar {
+	float: left; 
+	min-height: 30px; 
+	color: #444; 
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	font-weight: bold;
+	background-image: -moz-linear-gradient(center top , #f5f5f5, #f1f1f1);
+	cursor: pointer;
+}
+
+.btn-primary:hover {
+	box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+	color: #222;
+}
+
+.load_more, .load_back {
+	float: right; 
+	margin-left: 25%; 
+	min-height: 36px; 
+	color: #444; 
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	font-weight: bold;
+	background-image: -moz-linear-gradient(center top , #f5f5f5, #f1f1f1);
+}
+
+.load_more:hover, .load_back:hover {
+	box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+	color: #222;
+}
+
+.load_more:disabled, .load_back:disabled {
+	color: #999;	
+	box-shadow: none;
+}
+
+.text-input {
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px #ddd inset;
+	padding: 0.4em 0.4em;
+	font-size: 14px;
+	color: #444;
+}
+
+.text-input:focus {
+    border-color: #129fea;
+}
+
+.bigbox {
+	float: left;
+	width: 100%;
+	padding-top: 20px;
+}
+
+.box {
+	float: left;
+	overflow: hidden;
+	width: auto;
+        max-width: 70%;
+}
+
+.sidebar {
+	float: left;
+        width: 22%;
+	background: #FFF;
+	border: 1px solid #E5E5E5;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	font-size: 12px;
+	color: #444;
+	margin-bottom: 15px;
+        margin-left: 1em;
+	
+}
+
+.sidebar a {
+	color: #0074a2;
+	text-decoration: underline;
+	cursor: pointer;
+        float: right;
+}
+
+.sidebar a:hover {
+	color: #2ea2cc;
+}
+
+.sidebar h4 {
+	display: block;
+	font-size: 16px;
+	margin: 0;
+	margin-bottom: 8px;
+	border-bottom: 1px solid #E5E5E5;
+	color: #222;
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	padding-left: inherit;
+}
+
+.sidebar li {
+	line-height: 2em;
+}
+
+.sidebar .edit-box {
+	padding: 8px 10px;
+}
+
+.sidebar .action-box {
+	border-top: 1px solid #E5E5E5;
+	padding: 8px 10px;
+	margin:0; 
+	display: block;
+	background: none repeat scroll 0 0 #f5f5f5;
+	line-height: 2em;
+}
+
+.sidebar .action-box a {
+	color: #a00;
+}
+
+.sidebar .action-box a:hover {
+	color: red;
+}
+
+.box span:first-of-type {
+	color: #666;
+	font-size: 12px;
+	padding: 5px;
+}
+
+.box .mce-tinymce {
+	margin-top: 25px;
+}
+
+.box #tinymce {
+	padding: 20px 40px;
+}
+
+.message {
+    margin: 0 0 13px;
+    padding: 10px;
+    border: solid 1px #bd8;
+    background-color: #efa;
+    width: 100%;
+    margin-top: 10px;
+    float: left;
+}
+
+#mFail {
+	background-color: #E55451;
+}
+
+.ta-editor {
+  min-height: 500px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.ta-toolbar {
+	background-color: #F0F0F0;
+	padding: 10px 10px 5px;
+	margin-left: 0px; /* Override bootstrap */
+	border: 1px solid #EEE;
+}
+
+.ta-toolbar .btn-group {
+	margin-bottom: 5px;
+}
+
+.ta-editor, .white-box {
+	padding: 10px;
+	background-color: #FFF;
+	border: 1px solid #EEE;
+}
+
+textarea.ta-bind {
+	width: 100%;
+}
+
+.col-md-6 {
+    width: 80% !important;
+}
+
+#events_startdate {
+    width:50%;
+}
