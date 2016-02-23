@@ -62,6 +62,14 @@ team_admin_jsonallnews:
     path:     /admin/news/jsonallnews
     defaults: { _controller: TeamAdminBundle:News:jsonallnews }
     
+team_admin_postnew:
+    path:     /admin/post/new
+    defaults: { _controller: TeamAdminBundle:News:new }  
+    
 team_admin_post:
     path:     /admin/post/{id}
     defaults: { _controller: TeamAdminBundle:News:post }  
+    
+team_admin_deletepost:
+    path:     /admin/deletepost/{id}
+    defaults: { _controller: TeamAdminBundle:News:delete }  

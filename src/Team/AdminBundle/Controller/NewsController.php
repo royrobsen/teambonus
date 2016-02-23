@@ -29,14 +29,12 @@ class NewsController extends Controller
                 ->groupBy('wp.id')
                 ->getQuery();
                 
-        $posts = $queryPosts->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+        $posts = $queryPosts->getResult();
                
         $data = array('data' => array());
 
-        foreach ($posts as $post) {
-                        
-            $data['data'][] = array($post['postTitle'], $post['id']);
-            
+        foreach ($posts as $post) {     
+            $data['data'][] = array($post->getPostTitle(), $post->getPostDate()->format('Y-m-d'), $post->getPostStatus(), $post->getId());    
         }
 
         $response = new Response();
@@ -69,6 +67,50 @@ class NewsController extends Controller
                 }
         
                 return $this->render('TeamAdminBundle:News:post.html.twig', array('form' => $form->createView(), 'post' => $post));
+        
+    }    
+    
+    public function deleteAction($id) {
+         
+        $post = new WpPosts();
+        
+        $em = $this->getDoctrine()->getManager();
+
+        $post = $em->getRepository('TeamIndexBundle:WpPosts')->find($id);
+        
+        $em->remove($post);
+        $em->flush();
+        $this->get('session')->getFlashBag()->add('notice', 'Post wurde erfolgreich gelöscht!');
+                                       
+        return $this->redirectToRoute('team_admin_news');
+        
+    }    
+    
+    public function newAction(Request $request) {
+         
+        $post = new WpPosts();
+        
+        $em = $this->getDoctrine()->getManager();
+        
+        $form = $this->createForm(new PostsType(), $post);    
+
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                
+                $post->setPostAuthor('Admin');
+                $post->setPostDate(new \DateTime());
+                $post->setPostStatus('publish');
+
+                $em->persist($post);
+                $em->flush();
+                $this->get('session')->getFlashBag()->add('notice', 'Post wurde erfolgreich gespeichert!');
+                
+                return $this->redirectToRoute('team_admin_news');
+                
+            }
+
+            return $this->render('TeamAdminBundle:News:new.html.twig', array('form' => $form->createView()));
         
     }    
     

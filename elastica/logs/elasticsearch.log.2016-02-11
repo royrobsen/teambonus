@@ -1,0 +1,2 @@
+[2016-02-11 02:11:24,567][INFO ][cluster.routing.allocation.decider] [Margo Damian] low disk watermark [85%] exceeded on [LFIPp0ZgSyO1RS5xpFTJug][Margo Damian] free: 40.8gb[10.9%], replicas will not be assigned to this node
+[2016-02-11 02:11:54,574][INFO ][cluster.routing.allocation.decider] [Margo Damian] low disk watermark [85%] exceeded on [LFIPp0ZgSyO1RS5xpFTJug][Margo Damian] free: 40.8gb[10.9%], replicas will not be assigned to this node

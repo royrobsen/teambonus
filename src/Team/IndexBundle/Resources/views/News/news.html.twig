@@ -44,13 +44,13 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="img-hover">
-                                               <img src="{{post.guid}}" alt="" class="img-responsive">
+                                               <img src="{{post.postMimeType}}" alt="" class="img-responsive">
                                                <div class="overlay"><a href="/neuigkeiten/{{post.id}}-{{post.postTitle|slugify}}">+</a></div>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
                                             <h4><a href="/neuigkeiten/{{post.id}}-{{post.postTitle|slugify}}">{{post.postTitle}}</a></h4>
-                                            <p class="data-info">{{post.postDateGmt.date|date('d M Y')}}</p>
+                                            <p class="data-info">{{post.postDate.date|date('d M Y')}}</p>
                                             <p>{{post.postContent| truncate(150) |striptags }} <a href="/neuigkeiten/{{post.id}}-{{post.postTitle|slugify}}">Mehr lesen [+]</a></p>                                            
                                         </div>
                                    </div>
